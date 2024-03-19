@@ -25,7 +25,7 @@
     "formidable": "^2.1.1",
     "framer-motion": "^6",
     "next": "12.3.1",
-    "nf3-sdk": "./backend/nf3-sdk-v1.0.19.tgz",
+    "nf3-sdk": "./backend/nf3-sdk-v1.0.18.tgz",
     "react": "18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",

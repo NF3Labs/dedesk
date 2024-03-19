@@ -153,7 +153,6 @@ export const P2PStatus = ({
     if (!item) return;
     const rightCount = await getFtCount(0, item?.rightFT);
     const leftCount = await getFtCount(1, item?.leftFT);
-
     if (rightCount !== 0) {
       setStatusFts(1);
     } else if (leftCount !== 0) {
@@ -168,11 +167,8 @@ export const P2PStatus = ({
   const getFtCount = async (type, fts) => {
     let nRet = 0;
 
-
-    
-    const right = (await getERC20BalanceLocal(item?.rightOwner.address))[1]
-    const left = (await getERC20BalanceLocal(item?.leftOwner.address))[1]
     if (type === 0) {
+      const right = (await getERC20BalanceLocal(item?.rightOwner.address))[Number(chain)]
       right?.forEach((item) => {
         if (
           fts.filter(
@@ -188,7 +184,8 @@ export const P2PStatus = ({
           });
           // setIsLoading(false);
           return nRet;
-      } else {
+        } else {
+       const left = (await getERC20BalanceLocal(item?.leftOwner.address))[Number(chain)]
         left?.forEach((item) => {
         if (
           fts.filter(
